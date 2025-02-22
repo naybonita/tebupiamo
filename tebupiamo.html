@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción de botones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f9c2d1; /* Fondo rosita */
+            color: #e21896; /* Letras rosita fuerte */
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 20px 40px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .red-button {
+            background-color: red;
+            color: white;
+        }
+
+        .green-button {
+            background-color: green;
+            color: white;
+            transform: scale(1); /* Inicia con tamaño normal */
+        }
+
+        .green-button.large {
+            transform: scale(1.5); /* Aumenta el tamaño */
+        }
+
+        #response {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #e21896; /* Letras rosita fuerte */
+            display: none; /* Inicialmente oculto */
+        }
+
+        #message {
+            font-size: 30px;
+            font-weight: bold;
+            color: #e21896; /* Letras rosita fuerte */
+            display: none; /* Inicialmente oculto */
+        }
+
+        #gif {
+            margin-top: 20px;
+            display: none; /* Inicialmente oculto */
+        }
+    </style>
+</head>
+<body>
+    <h1>hola q guapo se ve hoy</h1>
+    <h2>ya no se enoje conmigo):</h2>
+    <div class="button-container">
+        <button class="button red-button" id="redBtn" onclick="toggleText()">ño</button>
+        <button class="button green-button" id="greenBtn" onclick="showMessage()">chi</button>
+    </div>
+    <div id="response">¿pq ño?:c</div>
+    <div id="message">gashas muakk<33> <3</div>
+    <div id="gif">
+        <img src="https://media.giphy.com/media/9J7kwQhfvkOoc/giphy.gif" alt="GIF" width="300">
+    </div>
+
+    <script>
+        let isRedClicked = false;
+
+        // Función para alternar el texto del botón rojo
+        function toggleText() {
+            const redButton = document.getElementById('redBtn');
+            if (isRedClicked) {
+                redButton.textContent = "ño";
+            } else {
+                redButton.textContent = "añañe";
+            }
+            isRedClicked = !isRedClicked;
+
+            // Cambia el tamaño del botón verde y muestra el texto
+            var greenButton = document.getElementById('greenBtn');
+            greenButton.classList.toggle('large');
+            var response = document.getElementById('response');
+            response.style.display = response.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Función para mostrar el mensaje y el GIF cuando se hace clic en el botón verde
+        function showMessage() {
+            var message = document.getElementById('message');
+            var gif = document.getElementById('gif');
+            message.style.display = 'block';
+            gif.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
